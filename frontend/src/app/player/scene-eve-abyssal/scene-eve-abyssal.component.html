@@ -1,0 +1,19 @@
+<stream class="layer l4 camera camera1" stream="camera1" mask="/assets/streaming/camera-mask-fabi.png" [shadow]="true"></stream>
+<div class="layer l3 camera-bg camera1" [class.hidden]="!webrtc.isLive('camera1')"></div>
+<stream class="layer l4 camera camera2" stream="camera2" mask="/assets/streaming/camera-mask-fabi.png" [shadow]="true"></stream>
+<div class="layer l3 camera-bg camera2" [class.hidden]="!webrtc.isLive('camera2')"></div>
+<stream class="layer l4 camera camera3" stream="camera3" mask="/assets/streaming/camera-mask-fabi.png" [shadow]="true"></stream>
+<div class="layer l3 camera-bg camera3" [class.hidden]="!webrtc.isLive('camera3')"></div>
+
+<stream class="layer l3 stream1" stream="stream1" mask="/assets/streaming/mask-half.png"></stream>
+
+<stream class="layer l2 stream2" stream="stream2"></stream>
+
+<stream class="layer l3 stream3" stream="stream3"></stream>
+
+<div class="layer l4 abyssal-income">
+    <abyssal></abyssal>
+</div>
+
+
+<stream stream="chatmedia" [audioOnly]="true"></stream>

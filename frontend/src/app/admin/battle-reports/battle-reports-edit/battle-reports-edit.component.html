@@ -1,0 +1,70 @@
+<div class="flex items-center space-x-4 py-5 lg:py-6">
+  <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
+    Battle Reports
+  </h2>
+  <div class="h-[32px] align-top py-1 sm:flex">
+    <div class="h-[24px] align-top w-px bg-slate-300 dark:bg-navy-600"></div>
+  </div>
+  <ul class="hidden flex-wrap items-center space-x-2 sm:flex">
+    <li class="flex items-center space-x-2">
+      Edit Battle Report
+    </li>
+  </ul>
+</div>
+<form [formGroup]="editForm" (ngSubmit)="updateBattlereport()">
+  <div class="card px-4 pb-4 sm:px-5">
+    <div class="max-w-xl">
+      <div class="mt-5">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+      </div>
+      <div class="flex space-x-2">
+        <mat-form-field class="w-full sm:flex" appearance="outline">
+          <mat-label>Start Date</mat-label>
+          <input matInput formControlName="startDate" [matDatepicker]="picker">
+          <mat-hint>DD.MM.YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="w-full sm:flex" appearance="outline">
+          <mat-label>Start Time</mat-label>
+          <input formControlName="startTime" matInput>
+        </mat-form-field>
+      </div>
+      <div class="flex space-x-2 mt-2">
+        <mat-form-field class="w-full sm:flex" appearance="outline">
+          <mat-label>End Date</mat-label>
+          <input matInput formControlName="endDate" [matDatepicker]="picker2">
+          <mat-hint>DD.MM.YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="w-full sm:flex" appearance="outline">
+          <mat-label>End Time</mat-label>
+          <input formControlName="endTime" matInput>
+        </mat-form-field>
+      </div>
+      <div class="mt-2">
+        <mat-form-field class="w-full" appearance="outline">
+          <mat-label>Systems</mat-label>
+          <mat-chip-grid #chipGrid aria-label="Enter system">
+            <mat-chip-row *ngFor="let system of systems" (removed)="remove(system)" [editable]="true"
+              (edited)="edit(system, $event)" [aria-description]="'press enter to edit ' + system.name">
+              {{system.name}}
+              <button matChipRemove [attr.aria-label]="'remove ' + system.name">
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+            <input placeholder="Add system..." [matChipInputFor]="chipGrid" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             (matChipInputTokenEnd)="add($event)" />
+          </mat-chip-grid>
+        </mat-form-field>
+      </div>
+      <div class="mt-4">
+        <button mat-flat-button color="primary" [disabled]="!editForm.valid">Update Battle Report</button>
+      </div>
+    </div>
+  </div>
+</form>

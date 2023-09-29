@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="layer l3 skew-wrapper">
+        <div class="blur-overlay"></div>
+        <div class="setup-content">
+            <span class="heading">current setup</span>
+            <div class="name-wrapper">
+                <span class="name">{{activeSetup()?.name}}</span>
+                <div class="name-bg"></div>
+            </div>
+            <div class="ships-wrapper" fxLayout="row start start wrap" fxLayoutGap="40px">
+                <div class="ship-wrapper" fxFlex="234px" *ngFor="let fitting of activeSetup()?.fittings">
+                    <img class="ship-image" src="https://images.evetech.net/types/{{fitting.type}}/render" />
+                    <div class="ship-name">
+                        <span class="race">{{fitting.race}} <span class="name">{{fitting.name}}</span></span>
+                        <span class="type">{{fitting.size}} - {{fitting.role}}</span>
+                    </div>
+                </div>                                                            
+            </div>
+        </div>
+    </div>
+</div>
+
+<stream class="layer l4 camera1" stream="camera1" mask="/assets/streaming/camera-mask-fabi.png" [shadow]="true"></stream>
+<div class="layer l3 camera1-bg"></div>
+
+<stream class="layer l2 stream1" stream="stream1" ></stream>
+
+<stream stream="chatmedia" [audioOnly]="true"></stream>

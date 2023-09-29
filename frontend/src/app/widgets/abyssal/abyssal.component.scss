@@ -1,0 +1,39 @@
+.abyssal-income {
+    position: relative;
+
+    width: 398px;
+    height: 67px;
+    background: url('/assets/streaming/abyssal_income.png');
+
+    font-family: Roboto;
+    font-size: 18px;
+    color: #daebf5;
+    text-align: right;
+
+    .numbers {
+        padding: 16px 16px 0 0;
+    }
+    
+    .bar {
+
+        padding: 8px 18px 0 98px;
+        transform: skew(-32deg);
+
+        > div {
+            background-color: #5b7069;
+            height: 8px;
+        }
+
+        .active {
+            background-color: #fff;
+        }
+    }
+
+    .profit {
+        position: absolute;
+        left: 98px;
+        top: 16px;
+
+        text-transform: uppercase;
+    }
+}

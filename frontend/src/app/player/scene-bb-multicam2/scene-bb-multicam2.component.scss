@@ -1,0 +1,55 @@
+.camera1 {
+  top: 10px;
+  left: -100px;
+}
+
+.camera2 {
+  top: 10px;
+
+  left: 870px;
+}
+
+.camera3 {
+  top: 510px; 
+}
+
+.camera4 {
+  top: 750px; 
+}
+
+.camera, .camera-bg {
+  transform: scale(0.2);
+  transform-origin: top left;
+}
+
+.camera-bg {
+  width: 1920px;
+  height: 1080px;
+
+  background: url('/assets/streaming/camera-mask-fabi-bg.png');
+}
+
+.stream2 {
+  top: 0;
+  right: -502px;
+}
+
+.stream1 {
+  position: relative;
+  left: -502px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 100%;
+
+    top: 0;
+    right: 453px;
+
+    z-index: 9999;
+
+    border-right: 10px rgba(234, 17, 0, 0.6) solid;
+    box-shadow: 5px 0px 5px 0px #000000;      
+  }
+}

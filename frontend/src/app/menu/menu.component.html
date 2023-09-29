@@ -1,0 +1,37 @@
+<div class="menu-wrapper">
+  <div fxLayout="row">
+    <div fxFlex></div>
+    <div fxFlex="1000px" class="menu">
+      <div fxLayout="row">
+        <div fxFlex class="menu-left">
+          <div class="menu-border"></div>
+          <div fxLayout="row">
+            <div fxFlex></div>
+            <ng-container *ngFor="let entry of menu.left">
+              <a [routerLink]="entry.link" routerLinkActive="active">
+                <div fxFlex="nogrow" class="menu-entry" >{{entry.text}}</div>
+              </a>
+            </ng-container>
+            <div fxFlex></div>
+          </div>          
+        </div>
+        <div fxFlex="250px" class="menu-logo">
+          <img src="/assets/layout/logo.png" />
+        </div>
+        <div fxFlex class="menu-right">
+          <div class="menu-border"></div>
+          <div fxLayout="row">
+            <div fxFlex></div>
+            <ng-container *ngFor="let entry of menu.right">
+              <a [routerLink]="entry.link" routerLinkActive="active">
+                <div fxFlex="nogrow" class="menu-entry" >{{entry.text}}</div>
+              </a>
+            </ng-container>
+            <div fxFlex></div>
+          </div>            
+        </div>
+      </div>
+    </div>
+    <div fxFlex></div>
+  </div>
+</div>

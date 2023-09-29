@@ -1,0 +1,13 @@
+frontend/.angular
+frontend/dist
+frontend/node_modules
+frontend/.vscode
+frontend/e2e
+frontend/src/environments
+backend/client
+backend/dist
+backend/.env-prod
+backend/.env
+backend/node_modules
+backend/test
+backend/.vscode

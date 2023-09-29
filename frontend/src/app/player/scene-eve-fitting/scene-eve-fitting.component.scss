@@ -1,0 +1,181 @@
+.camera1 {
+  transform: scale(0.3);
+  transform-origin: top right;
+
+  top: 0;
+  right: -160px;
+}
+
+.camera1-bg {
+  width: 1920px;
+  height: 1080px;
+
+  transform: scale(0.3);
+  transform-origin: top right;
+
+  background: url('/assets/streaming/camera-mask-fabi-bg.png');
+
+  top: 0;
+  right: -160px;
+}
+
+.testbg {
+    width: 1920px;
+    height: 1080px;
+}
+
+.fitting-window {
+    top: 300px;
+    right: 40px;
+
+    width: 950px;
+    height: 528px;
+    background-size: cover;
+    border: 4px rgb(234, 17, 0) solid;
+}
+
+.skew-wrapper {
+    width: 55%;
+    height: 1080px;
+
+    overflow: hidden;
+
+    .blur-overlay {
+        position: absolute;
+        left: -220px;
+
+        width: 100%;
+        height: 100%;
+        background-color: rgba(150,150,150, 0.3);
+        -webkit-backdrop-filter: blur(12px);
+
+        border-right: 40px rgba(234, 17, 0, 0.3) solid;
+        box-shadow: 15px 0px 15px 0px #000000;
+
+        backdrop-filter: blur(8px);
+        transform: skew(-16deg);
+    }
+
+    .setup-content {
+        position: absolute;
+        top: 80px;
+        left: 80px;
+
+        .heading {
+            font-family: 'Bebas Neue';
+            text-transform: uppercase;
+            font-size: 60px;
+            letter-spacing: 2px;
+            line-height: 60px;
+        }
+
+        .ships-wrapper {
+            width: 600px;
+
+            .ship-wrapper {
+                width: 234px;
+                height: 237px;
+
+                margin-bottom: 40px;
+
+                position: relative;
+
+                background-image: url('/assets/streaming/ship-border-inactive.png');
+
+                &.active {
+                   background-image: url('/assets/streaming/ship-border.png'); 
+                }
+
+                .ship-image {
+                    width: 234px;
+
+                    webkit-mask-image: url('/assets/streaming/ship-mask.png');
+                    mask-image: url('/assets/streaming/ship-mask.png');
+                }
+
+                .ship-name {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    background-color: rgba(234, 17, 0, 0.8);
+
+                    width: 100%;
+                    height: 100%;
+
+                    webkit-mask-image: url('/assets/streaming/ship-mask-name.png');
+                    mask-image: url('/assets/streaming/ship-mask-name.png');
+
+                    .race, .type {
+                        font-family: 'Roboto';
+                        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+                        text-transform: uppercase;
+                        position: absolute;
+                        left: 8px;                        
+                    }
+
+                    .race {
+                        bottom: 28px;
+                        font-size: 19px;
+
+                        .name {
+                            color: #343839;
+                        }
+                    }
+
+                    .type {
+                        color: #494f50;
+                        font-size: 14px;
+
+                        bottom: 13px;
+                    }                    
+                }
+            }
+        }
+
+        .name-wrapper {
+            position: relative;
+
+            width: 640px;
+            height: 90px;
+            overflow: hidden;
+
+            margin: 10px 0 20px 0;
+
+            .name {
+                font-family: 'Roboto';
+                text-transform: uppercase;
+                position: absolute;
+                top: 29px;
+                left: 12px;
+
+                font-size: 32px;
+                line-height: 32px;
+                letter-spacing: 2px;
+
+                color: rgba(234, 17, 0, 1);
+                text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+
+                z-index: 4;
+            }
+
+            .name-bg {
+                position: absolute;
+                top: 0;
+                left: -60px;
+
+                z-index: 3;
+
+                width: 600px;
+                height: 50px;
+
+                margin: 20px;
+
+                background-color: rgba(234, 17, 0, 0.3);
+                transform: skew(-16deg);
+
+                box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}

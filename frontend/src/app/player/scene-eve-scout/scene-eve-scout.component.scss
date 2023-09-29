@@ -1,0 +1,42 @@
+.camera1 {
+  transform: scale(0.4);
+  transform-origin: top left;
+
+  top: 0;
+  left: -200px;
+}
+
+.camera1-bg {
+  width: 1920px;
+  height: 1080px;
+
+  transform: scale(0.4);
+  transform-origin: top left;
+
+  background: url('/assets/streaming/camera-mask-fabi-bg.png');
+
+  top: 0;
+  left: -200px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.2;
+  }
+}
+
+.scout-cam {
+  top: 20px;
+  right: 40px;
+
+  text-transform: uppercase;
+  font-family: 'Bebas Neue';
+
+  font-size: 36px;
+
+  .blinking {
+    padding-left: 18px;
+    color: #EA1100;
+    animation: blinker 2s linear infinite;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="layer l3 stealth-mode">
+    <span class="normal">stealth-mode:</span>
+    <span class="blinking">active</span>
+</div>
+
+<stream class="layer l2 camera1" stream="camera1" [mirror]="true"></stream>
+
+<video class="layer l3 camera1bg" src="/assets/streaming/webcambg.webm"></video>
+
+<stream class="layer l2 stream1" stream="stream1"></stream>
+
+<div class="layer l3 info-bar bait">
+    <video src="/assets/streaming/info_bar.webm"></video>
+</div>
+
+<div class="layer l3 info-bar talon">
+    <video src="/assets/streaming/info_bar.webm"></video>
+</div> 
+
+<stream class="layer l2 stream2" stream="stream2"></stream>
+
+<div class="layer l4 chat-wrapper">
+<span class="headline">LOCAL CHAT</span>
+<chat></chat>
+</div>
+
+<stream stream="chatmedia" [audioOnly]="true"></stream>
+
+<video class="layer l1 background" src="/assets/streaming/Stream_Blank.mp4" autoplay loop></video>

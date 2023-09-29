@@ -1,0 +1,51 @@
+@import 'theme';
+
+@tailwind base;
+@import './assets/layout/css/base.css';
+@tailwind components;
+@import './assets/layout/css/components.css';
+@tailwind utilities;
+@import './assets/layout/css/pages.css';
+
+@import './assets/layout/css/fontawesome-all.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+body, html, app-root {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  border: 0;
+}
+
+
+html, body { height: 100%; }
+
+.layer {
+  position: absolute;
+}
+
+.l1 {
+  z-index: 1;
+}
+
+.l2 {
+  z-index: 2;
+}
+
+.l3 {
+  z-index: 3;
+}
+
+.l4 {
+  z-index: 4;
+}

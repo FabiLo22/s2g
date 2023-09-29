@@ -1,0 +1,59 @@
+<div x-data="{activeTab:'tabEpisodes'}" class="tabs flex flex-col">
+  <div class="is-scrollbar-hidden overflow-x-auto">
+    <div class="border-b-2 border-slate-150 dark:border-navy-500">
+      <div class="tabs-list -mb-0.5 flex">
+        <button
+          (click)="activeTab = 'tabSeries'"
+          [ngClass]="
+            activeTab === 'tabSeries'
+              ? 'border-primary dark:border-accent text-primary dark:text-accent-light'
+              : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'
+          "
+          class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+        >
+          <span>Series</span>
+        </button>
+        <button
+          (click)="activeTab = 'tabEpisodes'"
+          [ngClass]="
+            activeTab === 'tabEpisodes'
+              ? 'border-primary dark:border-accent text-primary dark:text-accent-light'
+              : 'border-transparent hover:text-slate-800 focus:text-slate-800 dark:hover:text-navy-100 dark:focus:text-navy-100'
+          "
+          class="btn shrink-0 space-x-2 rounded-none border-b-2 px-3 py-2 font-medium"
+        >
+          <span>Episodes</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="tab-content is-active pt-4">
+    <div *ngIf="activeTab === 'tabSeries'">
+      <app-series></app-series>
+    </div>
+    <div *ngIf="activeTab === 'tabEpisodes'">
+      <div>
+        <p>
+          Cras iaculis ipsum quis lectus faucibus, in mattis nulla molestie.
+          Vestibulum vel tristique libero. Morbi vulputate odio at viverra
+          sodales. Curabitur accumsan justo eu libero porta ultrices vitae eu
+          leo.
+        </p>
+        <div class="flex space-x-2 pt-3">
+          <a
+            href="#"
+            class="tag rounded-full border border-primary text-primary dark:border-accent-light dark:text-accent-light"
+          >
+            Tag 1
+          </a>
+          <a
+            href="#"
+            class="tag rounded-full border border-primary text-primary dark:border-accent-light dark:text-accent-light"
+          >
+            Tag 2
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<app-menu></app-menu>
+<app-header></app-header>
+<div class="content-wrapper">
+  <div class="content">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="Setup">
+        <p>Add new Ship</p>
+        <form [formGroup]="setupForm" novalidate>
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Ship</mat-label>
+              <mat-select formControlName="ship">
+                <mat-option *ngFor="let ship of ships" [value]="ship">{{ship.shipname}}</mat-option>
+              </mat-select>
+            </mat-form-field>            
+          </div>
+          <div>
+            <mat-form-field  appearance="fill">
+              <mat-label>Weapons</mat-label>
+              <input matInput type="text" formControlName="weapon">
+            </mat-form-field>
+          </div>
+          <div><button mat-raised-button (click)="addToSetup()">Add to setup</button></div>     
+        </form>
+        <p>Current Setup</p>              
+        <div class="shiplist">
+          <div *ngFor="let ship of setup" (click)="deleteFromSetup(ship)">{{ship.ship.shipname}} ({{ship.weapon}})</div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Abyssal">
+        <p>Update Abyssal Income</p>
+        <form [formGroup]="abyssalForm" novalidate>
+          <div>
+            <mat-form-field  appearance="fill">
+              <mat-label>Target Value</mat-label>
+              <input matInput type="text" formControlName="targetValue">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field  appearance="fill">
+              <mat-label>Current Value</mat-label>
+              <input matInput type="text" formControlName="currentValue">
+            </mat-form-field>
+          </div>
+          <div><button mat-raised-button (click)="updateAbyssal()">Update</button></div>     
+        </form>        
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

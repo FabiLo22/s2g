@@ -1,0 +1,59 @@
+.setup {
+  width:300px;
+  margin-left: 8px;
+
+  .title {
+    font-family: Quantico;
+
+    div {
+      background-color: #fcee0a;
+      color: #000;
+      text-align: center;
+    }
+
+    .left {
+      margin-right: -6px;
+      transform: skew(20deg);
+    }
+
+    .right {
+      margin-left: -6px;
+      transform: skew(-20deg);
+    }
+
+    margin-bottom: 8px;
+  }
+
+  .ship {
+    margin-bottom: 4px;
+
+    .icon {
+        border: 2px #fcee0a solid;
+        height: 54px;
+
+        margin-right:4px;
+    }
+
+    .shipinfo-wrapper {
+      font-family: Quantico;
+      overflow: hidden;
+
+      padding-right: 8px;
+
+      .shipinfo {
+        background-color: rgba(0, 0, 0, 0.8);   
+        transform: skew(-20deg);
+        margin-left: -8px;
+
+        .shipname {
+          margin: 1px 0 4px 0;
+        }
+
+        .shipname, .weapon {
+          margin-left: 18px;
+          transform: skew(20deg);
+        }
+    }      
+    } 
+  }
+}

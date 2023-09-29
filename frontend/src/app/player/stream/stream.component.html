@@ -1,0 +1,5 @@
+<div class="video-container" [class.mirror]="mirror" #containerRef>
+  <video #videoElement [class.shadow]="shadow"></video>
+  <div #blurMaskRef class="blur-mask" *ngIf="mask"></div>
+</div>
+<audio #audioElement *ngIf="audioOnly"></audio>

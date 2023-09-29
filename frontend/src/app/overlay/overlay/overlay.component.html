@@ -1,0 +1,22 @@
+<div class="setup">
+    <div class="title" fxFlexLayout="column">
+        <div fxFlex="20px" class="left"></div>
+        <div fxFlex>Current Setup</div>
+        <div fxFlex="20px" class="right"></div>
+    </div>
+    <div class="ship" fxFlexLayout="column" *ngFor="let ship of setup">
+        <div fxFlex="54px" class="icon"><img src="https://images.evetech.net/types/{{ship.ship.typeID}}/icon" style="width: 50px;"></div>
+        <div fxFlex class="shipinfo-wrapper">
+            <div class="shipinfo">
+                <div class="shipname">
+                    {{ship.ship.shipname}}
+                </div>
+            </div>
+            <div class="shipinfo">
+                <div class="weapon">
+                    {{ship.weapon}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
